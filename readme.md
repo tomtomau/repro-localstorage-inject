@@ -9,7 +9,21 @@ Refer to the components `foo.ts` and `bar.ts` as well as the corresponding jest 
 
 Running `yarn jest` will run the tests and demonstrate:
 
-* `foo.spec.ts` will fail as Storage is not known
+* `foo.spec.ts` will fail as Storage is not known:
+
+```
+ FAIL  test/unit/foo.spec.ts
+  ● Test suite failed to run
+
+    ReferenceError: Storage is not defined
+
+
+
+      at src/foo.ts:866:105
+      at Object.<anonymous> (src/foo.ts:869:2)
+      at Object.<anonymous> (test/unit/foo.spec.ts:1:1)
+```
+
 * `bar.spec.ts` will be operate properly, including executing a call onto the fake Storage that was created
 
 The only difference here is that `foo` has `@inject`.
